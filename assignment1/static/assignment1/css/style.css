@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primary: #102471;
+    --color-secondary: #adb900;
+    --color-accent: #333;
+
+    --color-white: #fff;
+    --color-black: #000;
+    --color-gray: #666;
+
+    --tranaform: all 400ms ease;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: var(--color-accent);
+}
+
+.top-nav{
+    height: 80px;
+    background-color: var(--color-primary);
+}
+
+.top-nav h2{
+    font-size: 30px;
+    line-height: 80px;
+    color: var(--color-white);
+}
+
+.container{
+    width: 70%;
+    margin: 50px auto;
+}
+
+.tools-container{
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.tools-container form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.tools-container .select, .tools-container .input{
+    width: 200px;
+    border: 2px solid var(--color-gray);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.table-container table{
+    border: 1px solid var(--color-gray);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+td, th {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
+
+td img{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.total-results{
+    font-size: 14px;
+    line-height: 30px;
+    font-style: italic;
+    color: gray;
+}
+
+.pagination-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0px;
+}
+
+.pagination-button{
+    width: 24px;
+    height: 24px;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 10px var(--color-gray);
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.pagination-button:hover{
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+.active{
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}

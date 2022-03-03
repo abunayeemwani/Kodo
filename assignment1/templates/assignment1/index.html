@@ -1,0 +1,57 @@
+{% extends 'assignment1/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="tools-container">
+        <form action="" method="get">
+            <div>
+                <select name="records" onchange="this.form.submit()" style="border: 2px solid #666; padding: 5px; border-radius: 5px;">
+                    <option value="20" {% if records == "20" %}selected{% endif %}>20</option>
+                    <option value="30" {% if records == "30" %}selected{% endif %}>30</option>
+                    <option value="50" {% if records == "50" %}selected{% endif %}>50</option>
+                </select>
+                <select name="sort" class="select" onchange="this.form.submit()">
+                    <option value="all">Sort</option>
+                    <option value="name" {% if sort == "name" %}selected{% endif %}>Name Ascending</option>
+                    <option value="-name" {% if sort == "-name" %}selected{% endif %}>Name Descending</option>
+                    <option value="date" {% if sort == "date" %}selected{% endif %}>Date Ascending</option>
+                    <option value="-date" {% if sort == "-date" %}selected{% endif %}>Date Descending</option>
+                </select>
+                <br>
+                <span class="total-results">Total results: {{count}}</span>
+            </div>
+
+            <div>
+                <input type="search" value="{{search}}" name="search" class="input" placeholder="Search" />
+                <select name="page" onchange="this.form.submit()" style="border: 2px solid #666; padding: 5px; border-radius: 5px;">
+                    {% for p in pages %}
+                    <option value="{{p}}" {% if page == p|stringformat:"i" %}selected{% endif %}>{{p}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <th>S.No</th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                {% for d in results %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{d.dateLastEdited}}</td>
+                    <td>{{d.name}}</td>
+                    <td>{{d.description}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

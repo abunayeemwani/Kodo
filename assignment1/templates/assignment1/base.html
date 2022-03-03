@@ -1,0 +1,18 @@
+{% load static %}
+<html>
+<head>
+    <title>Kodo Cards | Assignment1</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'assignment1/css/style.css' %}" />
+
+</head>
+<body>
+    <div class="top-nav">
+        <center><h2>Kodo Cards | Assignment 1</h2></center>
+    </div>
+    {% block content %}{% endblock content %}
+    <!-- Script -->
+    <script src="{% static 'assignment1/js/script.js' %}"></script>
+</body>
+</html>
