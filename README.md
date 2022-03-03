@@ -4,7 +4,7 @@ The first thing to do is to clone the repository:
 
 $ git clone https://github.com/zeeshanwani/Kodo.git
 
-$ cd kodocards
+$ cd Kodo
 
 
 Create a virtual environment to install dependencies in and activate it:
